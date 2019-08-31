@@ -1,0 +1,23 @@
+<h1>New Product</h1>
+<p>Products must contain a Name</p>
+<p>Products must contain a Qty.</p>
+<p>Products must contain a Price.</p>
+<p *ngFor="let error of errors">{{error}}</p>
+<form (submit)="addProduct()" name="myForm">
+    <table>
+    <tr>
+      <td><p>Name: </p></td>
+      <td><input type="text" name="name" [(ngModel)]="product.name" ng-required></td>
+    </tr>
+    <tr>
+      <td><p>Quanitity: </p></td>
+      <td><input type="number" name="quantity" [(ngModel)]="product.quantity" ng-required></td>
+    </tr>
+    <tr>
+      <td><p>Price: </p></td>
+      <td>$<input type="number" name="price" [(ngModel)]="product.price" ng-required></td>
+    </tr>
+  </table>
+  <button ng-disabled="myForm.$invalid">Create</button>
+</form>
+<button (click)="resetFields()">Reset</button>

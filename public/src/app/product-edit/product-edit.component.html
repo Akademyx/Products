@@ -1,0 +1,20 @@
+<h1>Update Product</h1>
+<p *ngFor="let x of errors">{{x}}</p>
+<form (submit)="editProduct()">
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" [(ngModel)]="product.name" name="name"></td>
+    </tr>
+    <tr>
+      <td>Qty:</td>
+      <td><input type="number" [(ngModel)]="product.quantity" name="quantity"></td>
+    </tr>
+    <tr>
+      <td>Price</td>
+      <td>$<input type="number" [(ngModel)]="product.price" name="price"></td>
+    </tr>
+  </table>
+  <button>Update</button>
+</form>
+<button (click)="reset()">Reset</button>

@@ -1,0 +1,20 @@
+<p>To delete a product, the Qty must be 0</p>
+
+<p *ngIf="error.length > 0">{{error}}</p>
+
+<table>
+  <tr>
+    <td>Name:</td>
+    <td>{{product.name}}</td>
+  </tr>
+  <tr>
+    <td>Qty:</td>
+    <td>{{product.quantity}}</td>
+  </tr>
+  <tr>
+    <td>Price:</td>
+    <td>${{product.price}}</td>
+  </tr>
+</table>
+<button [routerLink]="['/products']">Back</button>
+<button (click)="delete()">Delete</button>
